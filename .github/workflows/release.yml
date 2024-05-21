@@ -44,7 +44,9 @@ jobs:
         uses: malinskiy/action-android/install-sdk@release/0.1.3
 
       - name: Build project
-        run: ./gradlew :viroreact:assembleRelease
+        run: |
+          echo `pwd`
+          ./gradlew :viroreact:assembleRelease
         working-directory: ./android
 
       - name: Create Release
