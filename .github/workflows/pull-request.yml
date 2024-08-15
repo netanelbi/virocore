@@ -4,7 +4,14 @@ on:
   push:
     branches:
       - main
+      - task/screenshot-and-permission-errors
   pull_request:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to run this workflow on'
+        required: true
+        default: 'task/screenshot-and-permission-errors'
 
 jobs:
   androidBuild:
